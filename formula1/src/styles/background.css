@@ -1,0 +1,18 @@
+/* Efectos dinámicos para el fondo */
+@keyframes subtleZoom {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+body::before {
+  animation: subtleZoom 30s infinite ease-in-out;
+  transition: background-image 1s ease;
+}
+
+/* Cambio de imagen al pasar el ratón (opcional) */
+/* body:hover::before {
+  background-image: 
+    linear-gradient(rgba(48, 48, 49, 0.9), rgba(5, 5, 10, 0.95)),
+    url('/images/f1-track-alternate.jpg');
+} */

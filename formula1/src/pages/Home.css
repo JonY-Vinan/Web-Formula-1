@@ -1,0 +1,396 @@
+/* src/pages/Home.css */
+
+/* ===== VARIABLES GLOBALES ===== */
+:root {
+  --f1-red: #e10600;
+  --f1-black: #15151e;
+  --f1-white: #ffffff;
+  --f1-dark-gray: #1e1e27;
+  --glass-bg: rgba(30, 30, 39, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --text-primary: #f5f5f5;
+  --text-secondary: #cccccc;
+}
+
+/* ===== RESET Y ESTILOS BASE ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--f1-black);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* ===== HEADER COMPATIBLE ===== */
+.header-glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border-radius: 0 0 20px 20px;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.home-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  padding-top: 1rem;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  background: linear-gradient(rgba(21, 21, 30, 0.7), rgba(21, 21, 30, 0.9)), 
+              url('/images/f1-hero.jpg') center/cover no-repeat;
+  height: 70vh;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 15px;
+  margin-bottom: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 800px;
+  padding: 2rem;
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 1.5rem;
+  font-weight: 900;
+  line-height: 1.2;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.hero h1 span {
+  color: var(--f1-red);
+  display: inline-block;
+}
+
+.hero p {
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  margin-bottom: 2.5rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ===== BOTONES ===== */
+.cta-button {
+  background: var(--f1-red);
+  color: white;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(225, 6, 0, 0.4);
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(225, 6, 0, 0.5);
+}
+
+.cta-button.secondary {
+  background: transparent;
+  border: 2px solid var(--f1-red);
+  box-shadow: none;
+}
+
+.cta-button.secondary:hover {
+  background: rgba(225, 6, 0, 0.1);
+}
+
+/* ===== TARJETAS ===== */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 15px;
+  padding: 2.5rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== PRÓXIMA CARRERA ===== */
+.next-race h2 {
+  color: var(--f1-red);
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.race-info h3 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: var(--text-primary);
+}
+
+.race-info p {
+  margin-bottom: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.race-info p strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.details-link {
+  color: var(--f1-red);
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 1.5rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+.details-link:hover {
+  color: #ff3a2d;
+}
+
+/* ===== CLASIFICACIÓN DE PILOTOS ===== */
+.featured-drivers {
+  margin: 5rem 0;
+}
+
+.featured-drivers h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.2rem;
+  color: var(--f1-red);
+  position: relative;
+}
+
+.featured-drivers h2::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 3px;
+  background: var(--f1-red);
+  margin: 1rem auto 0;
+}
+
+.drivers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.driver-card {
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.driver-card:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+.driver-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+
+.driver-position {
+  background: var(--f1-red);
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.driver-number {
+  color: var(--f1-red);
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.driver-card h3 {
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.driver-card p {
+  margin-bottom: 0.7rem;
+  color: var(--text-secondary);
+}
+
+.driver-card p strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.driver-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  color: var(--f1-white);
+  background: var(--f1-red);
+  padding: 0.7rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.driver-link:hover {
+  background: #c90500;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(225, 6, 0, 0.4);
+}
+
+/* ===== ÚLTIMOS RESULTADOS ===== */
+.last-results {
+  text-align: center;
+}
+
+.last-results h2 {
+  margin-bottom: 1rem;
+  color: var(--f1-red);
+}
+
+.last-results p {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+/* ===== ESTADOS DE CARGA ===== */
+.loading-container, .error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  text-align: center;
+  padding: 2rem;
+}
+
+.loading-spinner {
+  border: 5px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  border-top: 5px solid var(--f1-red);
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 2rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-container h2 {
+  color: var(--f1-red);
+  margin-bottom: 1rem;
+}
+
+.error-container p {
+  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+}
+
+.error-container button {
+  background: var(--f1-red);
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.error-container button:hover {
+  background: #c90500;
+  transform: translateY(-2px);
+}
+
+/* ===== MEDIA QUERIES ===== */
+@media (max-width: 1024px) {
+  .home-container {
+    padding: 1.5rem;
+  }
+  
+  .hero {
+    height: 60vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 50vh;
+    min-height: 400px;
+  }
+  
+  .glass-card {
+    padding: 1.8rem;
+  }
+  
+  .featured-drivers h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-container {
+    padding: 1rem;
+  }
+  
+  .hero {
+    height: 70vh;
+    border-radius: 10px;
+  }
+  
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .glass-card {
+    padding: 1.5rem;
+  }
+  
+  .drivers-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cta-button {
+    width: 100%;
+    text-align: center;
+  }
+}
